@@ -1,0 +1,117 @@
+@font-face {
+    font-family: FinSerifDisplay;
+    src: url('fonts/FinSerifDisplay-Regular.otf');
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    background-color: rgb(63, 0, 112);
+    color: aliceblue;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    background-image: url(images/computer.png);
+    background-repeat: repeat-x;
+    background-repeat: repeat;
+    font-family: FinSerifDisplay;
+}
+h1, h2 {
+    background: #3c0064;
+    animation: lag 0.3s linear infinite;
+    text-align: center;
+    width: auto;
+    padding: 1%;
+}
+@keyframes lag {
+    0% {transform: translate(0, 0,);
+    }
+    100% {
+        transform: translate(1%, -3%);
+    }
+}
+a {
+    color: aliceblue;
+    /* animation: lag 0.3s linear infinite; 
+    interessant nok virker den ikke alligevel */
+}
+.container {
+    margin-top: 40%;
+    width: 300px;
+    height: 400px;
+    background-image: url(images/table.png);
+    grid-template-rows: 75% 25%;
+    position: absolute;
+    background-position: center;
+}
+.btnRadio {
+    top: 32.5%;
+    z-index: 2;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%; 
+    cursor: pointer;
+    position: relative;
+}
+.drink {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    transform: translate(0, 0);
+}
+
+
+
+/* Drink positioning */
+#red {
+    top: 25%; left: 33.3%; transform: translateX(0) translateY(0);
+}
+#green {
+    top: 25%; right: 33.3%; transform: translateY(0) translateX(0);
+}
+#yellow {
+    top: 25%; left: 33.3%; transform: translateY(0) translateX(0);
+}
+#blue {
+    bottom: 43%; left: 33.3%; transform: translateX(0) translateY(0); 
+}
+
+
+.btnRadio:checked ~ .drink {
+    display: block;
+}
+.btnRadio:checked ~ #red {
+    animation: slideRed 0.5s linear forwards;
+}
+.btnRadio:checked ~ #green {
+    animation: slideGreen 0.5s linear forwards;
+}
+.btnRadio:checked ~ #yellow {
+    animation: slideYellow 0.5s linear forwards;
+}
+.btnRadio:checked ~ #blue {
+    animation: slideBlue 0.5s linear forwards;
+}
+
+@keyframes slideRed {
+    100% {transform: translateX(0) translateY(-100%);
+        opacity: 1;}
+}
+@keyframes slideGreen {
+    100% {transform: translateY(-10%) translateX(-100%);
+        opacity: 1;}
+}
+@keyframes slideYellow {
+    100% {transform: translateX(100%) translateY(-10%);
+        opacity: 1;}
+}
+@keyframes slideBlue {
+    100% {transform: translateY(60%) translateX(3%);
+        opacity: 1;}}
+
+@media screen and (max-width: 600px) {
+    .container {
+        margin-top: 160%;
+    }
+}

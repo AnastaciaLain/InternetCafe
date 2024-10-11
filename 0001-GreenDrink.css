@@ -1,0 +1,26 @@
+body {
+  background-image: url(images/bubbles.png);
+  background-color: #0bc04a;
+  color: rgb(72, 0, 100);
+  text-align: center;
+  margin: 2%;
+}
+h1 {
+  text-align: center;
+}
+.container {
+    display: grid;
+    text-align: justify;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1 1 1;
+    background-color: #239b739d;
+    padding: 2%;
+}
+.containerMiddle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+.image {
+  width: 100%;
+}
